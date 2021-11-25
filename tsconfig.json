@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2015",
-    "module": "commonjs",
-    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
     "outDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
@@ -13,10 +15,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "emitDeclarationOnly": true,
     "baseUrl": "./",
     "paths": {
       "@design_system/*": ["./*"]
     }
   },
-  "include": ["src/*"]
+  "include": ["next-env.d.ts", "src/*"]
 }

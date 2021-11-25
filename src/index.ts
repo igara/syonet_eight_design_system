@@ -1,2 +1,2 @@
-export { Dialog } from './components';
+export * from './components';
 export { Variables, GlobalStyles } from './globals';

@@ -1,4 +1,4 @@
 import React from 'react';
 declare type Props = {};
-export declare const Dialog: React.FC<Props>;
+export declare const MenuIcon: React.FC<Props>;
 export {};

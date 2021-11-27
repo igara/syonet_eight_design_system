@@ -19,7 +19,8 @@
     "baseUrl": "./",
     "paths": {
       "@design_system/*": ["./*"]
-    }
+    },
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["next-env.d.ts", "src/*"]
 }

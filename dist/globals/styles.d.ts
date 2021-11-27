@@ -1,2 +1,1 @@
-/// <reference types="react" />
-export declare const GlobalStyles: JSX.Element;
+export declare const GlobalStyles: import("@emotion/react").SerializedStyles;

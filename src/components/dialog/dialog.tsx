@@ -4,11 +4,5 @@ import { styles } from './dialog.style';
 type Props = {};
 
 export const Dialog: React.FC<Props> = () => {
-  return (
-    <>
-      <style jsx>{styles}</style>
-
-      <dialog className="dialog"></dialog>
-    </>
-  );
+  return <dialog css={styles.dialog}></dialog>;
 };

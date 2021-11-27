@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const styles = {
-  dialog: css`
-    display: flex;
+  menuIcon: (color: string) => css`
+    color: ${color};
   `,
 };

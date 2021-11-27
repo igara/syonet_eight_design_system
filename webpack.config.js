@@ -3,6 +3,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = (env, argv) => {
   const config = {
+    target: 'node',
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     entry: ['./src/index.ts'],
     output: {
@@ -33,6 +34,10 @@ module.exports = (env, argv) => {
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
         amd: 'react-dom',
+      },
+      emotion: {
+        commonjs: 'emotion',
+        commonjs2: 'emotion',
       },
     },
     plugins: [

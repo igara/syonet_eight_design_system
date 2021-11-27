@@ -1,2 +1,3 @@
-/// <reference types="react" />
-export declare const styles: JSX.Element;
+export declare const styles: {
+    dialog: import("@emotion/react").SerializedStyles;
+};

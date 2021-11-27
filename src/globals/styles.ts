@@ -1,4 +1,4 @@
-import css from 'styled-jsx/css';
+import { css } from '@emotion/react';
 
 export const GlobalStyles = css`
   :root {

@@ -25,7 +25,7 @@ jobs:
       - name: Checkout submodule
         run: |
           git submodule update --init --remote projects/syonet_eight_design_system
-          (cd projects/syonet_eight_design_system && git checkout ${{ github.ref_name }})
+          (cd projects/syonet_eight_design_system && git pull && git checkout ${{ github.ref_name }})
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"

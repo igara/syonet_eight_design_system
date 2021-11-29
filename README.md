@@ -13,10 +13,6 @@ GitHub Repository Settings Secrets
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 
----
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Figma
 
 https://www.figma.com/file/0kMl83e8cWChWpnSaTsmfc/design_sytem

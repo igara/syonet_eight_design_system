@@ -1,0 +1,21 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { Dialog } from './dialog';
+
+<Meta title="design_system/dialog" component={Dialog} />
+
+# design_system/dialog
+
+ダイアログを表示する
+
+<Story
+  name="dialog"
+  args={{
+    isOpen: true,
+    children: 'ダイアログ',
+  }}></Story>
+
+<Source>
+  <Dialog />
+</Source>
+
+<Props story="dialog" />

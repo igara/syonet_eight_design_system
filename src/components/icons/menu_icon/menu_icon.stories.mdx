@@ -1,22 +1,23 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
 import { MenuIcon } from './menu_icon';
 
 <Meta title="design_system/icons" component={MenuIcon} />
 
-# syonet_eight_www
+# design_system/icons/menu_icon
 
 メニュー用のアイコンを表示する
 
-## サンプル
+<Story
+  name="menu_icon"
+  args={{
+    size: 20,
+    color: 'black',
+    backgroundColor: '#C4C4C4',
+    borderColor: 'black',
+  }}></Story>
 
-<Preview withSource="open">
-  <Story name="icons/menu_icon">
-    <MemoryRouter>
-      <MenuIcon />
-    </MemoryRouter>
-  </Story>
-</Preview>
+<Source>
+  <MenuIcon />
+</Source>
 
-## プロパティ
-
-<Props of={MenuIcon} />
+<Props story="menu_icon" />

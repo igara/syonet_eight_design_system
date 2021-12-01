@@ -15,7 +15,8 @@ module.exports = {
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/../../__mocks__/image_mock.js',
+    '\\.(svg)$': '<rootDir>/../../__mocks__/svg_mock.js',
+    '\\.(jpg|jpeg|png|gif)$': '<rootDir>/../../__mocks__/image_mock.js',
     '\\.(css)$': '<rootDir>/../../__mocks__/style_mock.js',
   },
   globals: {

@@ -15,7 +15,7 @@
       "clientId": "MzE2NLA0MjU31y+uzM9LLYlPzUzPKIlPSS3OTM+LL64sLknN1TcysDA3NTM30M9MTyxKBAA="
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "syonet-eight-vrt"
+      "bucketName": "syonet-eight-vrt-design-system"
     }
   }
 }

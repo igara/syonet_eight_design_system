@@ -8,10 +8,13 @@ see https://github.com/igara/syonet_eight
 
 GitHub Repository Settings Secrets
 
-- REG_NOTICE_CLIENT_ID  
-  Client ID From Installed GitHub Apps [reg-suit](https://reg-viz.github.io/gh-app/index.html).
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
+
+---
+
+REG_NOTICE_CLIENT_ID  
+Client ID From Installed GitHub Apps [reg-suit](https://reg-viz.github.io/gh-app/index.html)
 
 ## Figma
 

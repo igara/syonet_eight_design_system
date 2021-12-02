@@ -3,6 +3,9 @@
 # dependencies
 node_modules
 .next
+__screenshots__
+.reg
+storybook-static
 
 # testing
 /coverage

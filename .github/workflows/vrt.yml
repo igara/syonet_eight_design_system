@@ -47,9 +47,9 @@ jobs:
           yarn
       - name: run reg-suit
         run: |
-          yarn build:storybook
-          yarn storycap
-          yarn vrt
+          yarn build:storybook:design_system
+          yarn storycap:design_system
+          yarn vrt:design_system
 
 env:
   REG_NOTICE_CLIENT_ID: ${{ secrets.REG_NOTICE_CLIENT_ID }}

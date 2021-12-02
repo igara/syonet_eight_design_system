@@ -28,7 +28,8 @@ export const styles = {
     justify-content: center;
     width: ${props.width};
     height: ${props.width};
-    border: 2px solid black;
+    border: 2px solid;
+    border-radius: 20px;
     background: white;
 
     div:last-child {

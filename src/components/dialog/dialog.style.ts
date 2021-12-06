@@ -1,17 +1,21 @@
 import { css } from '@emotion/react';
 import * as CSS from 'csstype';
 
+export type DialogStyleProps = {
+  isOpen: boolean;
+};
+
 export type ContentStyleProps = {
   width: CSS.Property.Width;
   height: CSS.Property.Height;
 };
 
 export const styles = {
-  dialog: () => css`
+  dialog: (props: DialogStyleProps) => css`
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+    display: ${props.isOpen ? 'flex' : 'none'};
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -31,11 +35,10 @@ export const styles = {
     border: 2px solid;
     border-radius: 20px;
     background: white;
-
-    div:last-child {
-      position: absolute;
-      bottom: 12px;
-    }
   `,
-  closeButton: () => css``,
+  close: () => css`
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  `,
 };

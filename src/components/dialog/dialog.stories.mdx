@@ -11,7 +11,12 @@ import { Dialog } from './dialog';
   name="dialog"
   args={{
     isOpen: true,
-    children: 'ダイアログ',
+    onClose: () => alert('props.onClose()が起動'),
+    content: {
+      width: '200px',
+      height: '200px',
+    },
+    children: <div>ダイアログ</div>,
   }}></Story>
 
 <Source>

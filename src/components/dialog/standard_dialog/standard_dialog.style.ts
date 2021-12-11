@@ -30,6 +30,7 @@ export const styles = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 32px;
     width: ${props.width};
     height: ${props.width};
     border: 2px solid;

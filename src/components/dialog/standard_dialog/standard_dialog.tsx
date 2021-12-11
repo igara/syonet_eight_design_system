@@ -19,8 +19,8 @@ export const StandardDialog: React.FC<StandardDialogProps> = (props) => {
       onClick={props.onClose}>
       <div
         css={Styels.styles.content({
-          width: props?.content?.width || '200px',
-          height: props?.content?.height || '200px',
+          width: props?.content?.width || 'auto',
+          height: props?.content?.height || 'auto',
         })}
         onClick={(e) => e.stopPropagation()}>
         <div>{props.children}</div>

@@ -1,7 +1,10 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
-import { StandardDialog } from './api_call_result_dialog';
+import { APICallResultDialog } from './api_call_result_dialog';
 
-<Meta title="design_system/dialog/api_call_result_dialog" component={StandardDialog} />
+<Meta
+  title="design_system/dialog/api_call_result_dialog"
+  component={APICallResultDialog}
+/>
 
 # design_system/dialog/api_call_result_dialog
 
@@ -11,16 +14,13 @@ import { StandardDialog } from './api_call_result_dialog';
   name="api_call_result_dialog"
   args={{
     isOpen: true,
+    isFirstTime: true,
     onClose: () => alert('props.onClose()が起動'),
     content: {
-      width: '200px',
-      height: '200px',
+      width: 'auto',
+      height: 'auto',
     },
-    children: <div>ダイアログ</div>,
+    error: 'APIの取得に失敗',
   }}></Story>
 
-<Source>
-  <StandardDialog />
-</Source>
-
-<Props story="standard_dialog" />
+<Props story="api_call_result_dialog" />

@@ -1,0 +1,26 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { StandardDialog } from './api_call_result_dialog';
+
+<Meta title="design_system/dialog/api_call_result_dialog" component={StandardDialog} />
+
+# design_system/dialog/api_call_result_dialog
+
+ダイアログを表示する
+
+<Story
+  name="api_call_result_dialog"
+  args={{
+    isOpen: true,
+    onClose: () => alert('props.onClose()が起動'),
+    content: {
+      width: '200px',
+      height: '200px',
+    },
+    children: <div>ダイアログ</div>,
+  }}></Story>
+
+<Source>
+  <StandardDialog />
+</Source>
+
+<Props story="standard_dialog" />

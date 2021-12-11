@@ -1,17 +1,17 @@
 import React from 'react';
-import * as Styels from './dialog.style';
+import * as Styels from './standard_dialog.style';
 import { CloseIcon } from '@design_system/src/components/icons';
 
-type Props = {
+export interface StandardDialogProps {
   isOpen: boolean;
   onClose: () => void;
   content?: {
     width?: Styels.ContentStyleProps['width'];
     height?: Styels.ContentStyleProps['height'];
   };
-};
+}
 
-export const Dialog: React.FC<Props> = (props) => {
+export const StandardDialog: React.FC<StandardDialogProps> = (props) => {
   return (
     <dialog
       css={Styels.styles.dialog({ isOpen: props.isOpen })}

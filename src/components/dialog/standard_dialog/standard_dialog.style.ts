@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import * as CSS from 'csstype';
 
-export type DialogStyleProps = {
+export type StandardDialogStyleProps = {
   isOpen: boolean;
 };
 
@@ -11,7 +11,7 @@ export type ContentStyleProps = {
 };
 
 export const styles = {
-  dialog: (props: DialogStyleProps) => css`
+  dialog: (props: StandardDialogStyleProps) => css`
     position: fixed;
     top: 0;
     left: 0;

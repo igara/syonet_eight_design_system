@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-export declare type DialogStyleProps = {
+export declare type StandardDialogStyleProps = {
     isOpen: boolean;
 };
 export declare type ContentStyleProps = {
@@ -7,7 +7,7 @@ export declare type ContentStyleProps = {
     height: CSS.Property.Height;
 };
 export declare const styles: {
-    dialog: (props: DialogStyleProps) => import("@emotion/react").SerializedStyles;
+    dialog: (props: StandardDialogStyleProps) => import("@emotion/react").SerializedStyles;
     content: (props: ContentStyleProps) => import("@emotion/react").SerializedStyles;
     close: () => import("@emotion/react").SerializedStyles;
 };

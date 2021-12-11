@@ -2,7 +2,7 @@ import React from 'react';
 import * as Styels from './close_icon.styles';
 import Icon from './close_icon.svg';
 
-export interface Props {
+interface Props {
   size?: Styels.Props['size'];
   color?: Styels.Props['color'];
   backgroundColor?: Styels.Props['backgroundColor'];

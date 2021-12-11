@@ -1,12 +1,11 @@
 import React from 'react';
-import * as Styels from './dialog.style';
-declare type Props = {
+import * as Styels from './standard_dialog.style';
+export interface StandardDialogProps {
     isOpen: boolean;
     onClose: () => void;
     content?: {
         width?: Styels.ContentStyleProps['width'];
         height?: Styels.ContentStyleProps['height'];
     };
-};
-export declare const Dialog: React.FC<Props>;
-export {};
+}
+export declare const StandardDialog: React.FC<StandardDialogProps>;

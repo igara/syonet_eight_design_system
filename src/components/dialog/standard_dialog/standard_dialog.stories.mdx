@@ -1,14 +1,14 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
-import { Dialog } from './dialog';
+import { StandardDialog } from './standard_dialog';
 
-<Meta title="design_system/dialog" component={Dialog} />
+<Meta title="design_system/dialog/standard_dialog" component={StandardDialog} />
 
-# design_system/dialog
+# design_system/dialog/standard_dialog
 
 ダイアログを表示する
 
 <Story
-  name="dialog"
+  name="standard_dialog"
   args={{
     isOpen: true,
     onClose: () => alert('props.onClose()が起動'),
@@ -20,7 +20,7 @@ import { Dialog } from './dialog';
   }}></Story>
 
 <Source>
-  <Dialog />
+  <StandardDialog />
 </Source>
 
-<Props story="dialog" />
+<Props story="standard_dialog" />

@@ -2,7 +2,7 @@ import React from 'react';
 import TestingLibrary from '@testing-library/react';
 import { CloseIcon } from '../..';
 
-describe('MenuIcon', () => {
+describe('CloseIcon', () => {
   beforeEach(() => {
     jest.resetModules();
   });

@@ -1,2 +1,2 @@
-export { Dialog } from './dialog';
+export * from './dialog';
 export * from './icons';

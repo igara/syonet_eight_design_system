@@ -1,0 +1,26 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { APICallResultDialog } from './api_call_result_dialog';
+
+<Meta
+  title="design_system/dialog/api_call_result_dialog"
+  component={APICallResultDialog}
+/>
+
+# design_system/dialog/api_call_result_dialog
+
+ダイアログを表示する
+
+<Story
+  name="api_call_result_dialog"
+  args={{
+    isOpen: true,
+    isFirstTime: true,
+    onClose: () => alert('props.onClose()が起動'),
+    content: {
+      width: 'auto',
+      height: 'auto',
+    },
+    error: 'APIの取得に失敗',
+  }}></Story>
+
+<Props story="api_call_result_dialog" />

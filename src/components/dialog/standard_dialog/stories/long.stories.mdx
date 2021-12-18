@@ -1,0 +1,139 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { StandardDialog } from '../standard_dialog';
+
+<Meta title="design_system/dialog/standard_dialog/long" component={StandardDialog} />
+
+export const LongComponent = () => (
+  <>
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+    1<br />
+    2<br />
+    3<br />
+    4<br />
+    5<br />
+    6<br />
+    7<br />
+    9<br />
+    0<br />
+  </>
+);
+
+export const Template = (args) => (
+  <div>
+    <LongComponent />
+    <StandardDialog {...args} />
+  </div>
+);
+
+# design_system/dialog/standard_dialog/long
+
+表示する文字列が長いときダイアログを表示する
+
+<Story
+  name="long"
+  args={{
+    isOpen: true,
+    onClose: () => alert('props.onClose()が起動'),
+    content: {
+      width: '200px',
+      height: '200px',
+    },
+    children: <LongComponent />,
+  }}>
+  {Template.bind({})}
+</Story>
+
+<Source>
+  <StandardDialog />
+</Source>
+
+<Props story="long" />

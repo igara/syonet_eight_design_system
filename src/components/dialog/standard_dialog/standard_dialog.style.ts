@@ -42,4 +42,13 @@ export const styles = {
     top: 12px;
     right: 12px;
   `,
+  children: () => css`
+    width: 100%;
+    overflow: auto;
+  `,
+  scroll: (isOpen: boolean) => css`
+    html body {
+      overflow: ${isOpen ? 'hidden' : 'initial'};
+    }
+  `,
 };

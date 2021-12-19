@@ -1,17 +1,17 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
-import { APICallResultDialog } from './api_call_result_dialog';
+import { APICallResultDialog } from '../';
 
 <Meta
-  title="design_system/dialog/api_call_result_dialog"
+  title="design_system/dialog/api_call_result_dialog/default"
   component={APICallResultDialog}
 />
 
-# design_system/dialog/api_call_result_dialog
+# design_system/dialog/api_call_result_dialog/default
 
 ダイアログを表示する
 
 <Story
-  name="api_call_result_dialog"
+  name="default"
   args={{
     isOpen: true,
     isFirstTime: true,
@@ -23,4 +23,4 @@ import { APICallResultDialog } from './api_call_result_dialog';
     error: 'APIの取得に失敗',
   }}></Story>
 
-<Props story="api_call_result_dialog" />
+<Props story="default" />

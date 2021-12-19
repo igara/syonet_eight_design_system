@@ -1,6 +1,6 @@
 import React from 'react';
 import TestingLibrary from '@testing-library/react';
-import { MenuIcon } from '../../';
+import { MenuIcon } from '../..';
 
 describe('MenuIcon', () => {
   beforeEach(() => {

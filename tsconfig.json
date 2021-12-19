@@ -1,10 +1,6 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "preserve",
     "outDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
@@ -12,15 +8,13 @@
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "noEmit": false,
     "emitDeclarationOnly": true,
     "baseUrl": "./",
     "paths": {
       "@design_system/*": ["./*"]
-    },
-    "jsxImportSource": "@emotion/react"
+    }
   },
-  "include": ["next-env.d.ts", "src/*"]
+  "include": ["../../types/**.ts", "src/*"]
 }

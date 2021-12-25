@@ -7,13 +7,15 @@ const fetcher = async (url: string) => {
       throw new Error(`server error: ${JSON.stringify(response)}`);
     }
 
-    return response.json();
+    const json = await response.json();
+
+    return json;
   } catch (error) {
     console.error(error);
     return error;
   }
 };
 
-export const useSWRByURL = (url: string) => {
-  return useSWR(url, fetcher);
-};
+export function useSWRByURL<Data = any, Error = any>(url: string) {
+  return useSWR<Data, Error>(url, fetcher);
+}

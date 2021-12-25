@@ -1,1 +1,1 @@
-export declare const useSWRByURL: (url: string) => import("swr").SWRResponse<any, any>;
+export declare function useSWRByURL<Data = any, Error = any>(url: string): import("swr").SWRResponse<Data, Error>;

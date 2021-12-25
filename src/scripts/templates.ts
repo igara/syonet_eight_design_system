@@ -15,7 +15,7 @@ export const main = () => {
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
     or
-    yarn templates path=projects/syonet_eight_www/components/xxxx
+    yarn templates path=projects/syonet_eight_www/src/components/xxxx
     `);
     return 1;
   }
@@ -31,7 +31,7 @@ export const main = () => {
     },
     syonet_eight_www: {
       paths: {
-        components: 'projects/syonet_eight_www/components',
+        components: 'projects/syonet_eight_www/src/components',
       },
       title: 'www',
     },
@@ -50,7 +50,7 @@ export const main = () => {
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
     or
-    yarn templates path=projects/syonet_eight_www/components/xxxx
+    yarn templates path=projects/syonet_eight_www/src/components/xxxx
     `);
     return 1;
   }

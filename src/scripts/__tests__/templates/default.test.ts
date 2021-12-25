@@ -28,7 +28,7 @@ describe('template script', () => {
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
     or
-    yarn templates path=projects/syonet_eight_www/components/xxxx
+    yarn templates path=projects/syonet_eight_www/src/components/xxxx
     `,
       ],
     ]).toEqual(spyConsoleError.mock.calls);
@@ -41,7 +41,7 @@ describe('template script', () => {
     process.argv = [
       'node',
       'projects/syonet_eight_design_system/src/scripts/templates.ts',
-      'path=projects/syonet_eight_yyyy/components/xxxx/yyyy',
+      'path=projects/syonet_eight_yyyy/src/components/xxxx/yyyy',
     ];
 
     const templates = (await import('../../templates')) as any;
@@ -55,7 +55,7 @@ describe('template script', () => {
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
     or
-    yarn templates path=projects/syonet_eight_www/components/xxxx
+    yarn templates path=projects/syonet_eight_www/src/components/xxxx
     `,
       ],
     ]).toEqual(spyConsoleError.mock.calls);
@@ -165,7 +165,7 @@ export const useXXXEffect = (args: {}) => {
     process.argv = [
       'node',
       'projects/syonet_eight_design_system/src/scripts/templates.ts',
-      'path=projects/syonet_eight_www/components/hoge/fuga',
+      'path=projects/syonet_eight_www/src/components/hoge/fuga',
     ];
 
     const templates = (await import('../../templates')) as any;

@@ -1,1 +1,1 @@
-export { MenuIcon } from './menu_icon';
+export * from './menu_icon';

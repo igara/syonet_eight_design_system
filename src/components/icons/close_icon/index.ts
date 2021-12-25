@@ -1,1 +1,1 @@
-export { CloseIcon } from './close_icon';
+export * from './close_icon';

@@ -38,6 +38,12 @@ module.exports = (env, argv) => {
       emotion: {
         commonjs: 'emotion',
         commonjs2: 'emotion',
+        amd: 'emotion',
+      },
+      swr: {
+        commonjs: 'swr',
+        commonjs2: 'swr',
+        amd: 'swr',
       },
     },
     plugins: [

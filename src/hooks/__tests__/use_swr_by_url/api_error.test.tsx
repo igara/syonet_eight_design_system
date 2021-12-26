@@ -3,6 +3,8 @@ import TestingLibrary from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useSWRByURL } from '../../';
 
+const spyConsoleError = jest.spyOn(global.console, 'error').mockImplementation();
+
 describe('use_swr_by_url', () => {
   beforeEach(() => {
     jest.resetModules();
@@ -20,7 +22,6 @@ describe('use_swr_by_url', () => {
     );
 
     const TestComponent = () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
       const result = useSWRByURL('https://example.syonet.work');
 
       return <div>{result.error && 'error message'}</div>;
@@ -29,5 +30,7 @@ describe('use_swr_by_url', () => {
     TestingLibrary.render(<TestComponent />);
     await TestingLibrary.waitFor(() => TestingLibrary.screen.getByText('error message'));
     expect(TestingLibrary.screen.getByText('error message')).toBeInTheDocument();
+
+    expect([[{ ok: false, status: 500 }]]).toEqual(spyConsoleError.mock.calls);
   });
 });

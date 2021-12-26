@@ -1,2 +1,3 @@
-export * as Variables from './variables';
-export { GlobalStyles } from './styles';
+export * from './variables';
+export * from './styles';
+export * from './fetcher';

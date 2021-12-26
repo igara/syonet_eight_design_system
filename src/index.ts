@@ -1,3 +1,3 @@
 export * from './components';
-export { Variables, GlobalStyles } from './globals';
+export * from './globals';
 export * from './hooks';

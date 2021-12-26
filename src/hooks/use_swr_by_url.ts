@@ -12,7 +12,7 @@ const fetcher = async (url: string) => {
     return json;
   } catch (error) {
     console.error(error);
-    return error;
+    throw new Error(`${error}`);
   }
 };
 

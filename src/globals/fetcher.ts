@@ -1,8 +1,27 @@
-export type FetcherType = 'text' | 'json' | undefined;
+export type FetcherOption = {
+  url: string;
+  type?: 'text' | 'json';
+  headers?: RequestInit['headers'];
+  method?: RequestInit['method'];
+  body?: RequestInit['body'];
+  credentials?: RequestInit['credentials'];
+};
 
-export const fetcher = async (url: string, type: FetcherType = 'json') => {
+export const fetcher = async ({
+  url = '',
+  type = 'json',
+  headers = {},
+  method = 'GET',
+  body,
+  credentials,
+}: FetcherOption) => {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers,
+      method,
+      body,
+      credentials,
+    });
     if (!response.ok) {
       throw new Error(`server error: ${JSON.stringify(response)}`);
     }

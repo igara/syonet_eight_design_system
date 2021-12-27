@@ -24,7 +24,7 @@ describe('use_swr_by_url', () => {
 
     const TestComponent = () => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const result = useSWRByURL('https://example.syonet.work');
+      const result = useSWRByURL({ url: 'https://example.syonet.work' });
 
       return <div>{result.data && result.data.message}</div>;
     };

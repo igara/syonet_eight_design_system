@@ -19,7 +19,7 @@ describe('fetcher', () => {
         }),
     );
 
-    const result = await fetcher('https://example.syonet.work');
+    const result = await fetcher({ url: 'https://example.syonet.work' });
     expect({
       message: 'ok',
     }).toEqual(result);

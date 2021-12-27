@@ -19,7 +19,7 @@ describe('fetcher', () => {
     );
 
     try {
-      await fetcher('https://example.syonet.work');
+      await fetcher({ url: 'https://example.syonet.work' });
     } catch (_) {
       expect([[{ ok: false, status: 500 }]]).toEqual(spyConsoleError.mock.calls);
     }

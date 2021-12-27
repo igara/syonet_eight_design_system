@@ -1,9 +1,6 @@
 import useSWR from 'swr';
-import { fetcher, FetcherType } from '@design_system/src';
+import { fetcher, FetcherOption } from '@design_system/src';
 
-export function useSWRByURL<Data = any, Error = any>(
-  url: string,
-  type: FetcherType = 'json',
-) {
-  return useSWR<Data, Error>(url, () => fetcher(url, type));
+export function useSWRByURL<Data = any, Error = any>(option: FetcherOption) {
+  return useSWR<Data, Error>(option.url, () => fetcher(option));
 }

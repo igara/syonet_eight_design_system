@@ -22,7 +22,7 @@ describe('use_swr_by_url', () => {
     );
 
     const TestComponent = () => {
-      const result = useSWRByURL('https://example.syonet.work');
+      const result = useSWRByURL({ url: 'https://example.syonet.work' });
 
       return <div>{result.error && 'error message'}</div>;
     };

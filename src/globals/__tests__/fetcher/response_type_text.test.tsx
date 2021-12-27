@@ -17,7 +17,10 @@ describe('fetcher', () => {
         }),
     );
 
-    const result = await fetcher('https://example.syonet.work', 'text');
+    const result = await fetcher({
+      url: 'https://example.syonet.work',
+      type: 'text',
+    });
     expect(result).toEqual('hoge');
   });
 });

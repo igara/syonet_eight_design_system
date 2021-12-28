@@ -18,7 +18,7 @@ describe('fetcher', () => {
     );
 
     const result = await fetcher({
-      url: 'https://example.syonet.work',
+      url: `https://raw.githubusercontent.com/igara/qiita-export/master/data/igara/2015-10-11 18-51-31-[メモ]Vagrantを使ってVMを起動する`,
       type: 'text',
     });
     expect(result).toEqual('hoge');

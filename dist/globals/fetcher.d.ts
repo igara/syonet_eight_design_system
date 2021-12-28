@@ -3,7 +3,6 @@ export declare type FetcherOption = {
     type?: 'text' | 'json';
     headers?: RequestInit['headers'];
     method?: RequestInit['method'];
-    body?: RequestInit['body'];
-    credentials?: RequestInit['credentials'];
+    bodyObject?: Object;
 };
-export declare const fetcher: ({ url, type, headers, method, body, credentials, }: FetcherOption) => Promise<any>;
+export declare const fetcher: ({ url, type, headers, method, bodyObject, }: FetcherOption) => Promise<any>;

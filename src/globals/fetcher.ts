@@ -3,8 +3,13 @@ export type FetcherOption = {
   type?: 'text' | 'json';
   headers?: RequestInit['headers'];
   method?: RequestInit['method'];
+  bodyObject?: Object;
+};
+
+type FetchOption = {
+  headers: FetcherOption['headers'];
+  method: FetcherOption['method'];
   body?: RequestInit['body'];
-  credentials?: RequestInit['credentials'];
 };
 
 export const fetcher = async ({
@@ -12,16 +17,22 @@ export const fetcher = async ({
   type = 'json',
   headers = {},
   method = 'GET',
-  body,
-  credentials,
+  bodyObject = {},
 }: FetcherOption) => {
   try {
-    const response = await fetch(url, {
+    let fetchOption: FetchOption = {
       headers,
       method,
-      body,
-      credentials,
-    });
+    };
+
+    if (method === 'POST') {
+      fetchOption = {
+        ...fetchOption,
+        body: JSON.stringify(bodyObject),
+      };
+    }
+
+    const response = await fetch(url, fetchOption);
     if (!response.ok) {
       throw new Error(`server error: ${JSON.stringify(response)}`);
     }

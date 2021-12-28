@@ -19,7 +19,9 @@ describe('fetcher', () => {
         }),
     );
 
-    const result = await fetcher({ url: 'https://example.syonet.work' });
+    const result = await fetcher({
+      url: 'https://api.github.com/repos/igara/qiita-export/contents/data/igara',
+    });
     expect({
       message: 'ok',
     }).toEqual(result);

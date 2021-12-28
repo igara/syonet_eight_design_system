@@ -19,7 +19,9 @@ describe('fetcher', () => {
     );
 
     try {
-      await fetcher({ url: 'https://example.syonet.work' });
+      await fetcher({
+        url: 'https://api.github.com/repos/igara/qiita-export/contents/data/igara',
+      });
     } catch (_) {
       expect([[{ ok: false, status: 500 }]]).toEqual(spyConsoleError.mock.calls);
     }

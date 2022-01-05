@@ -44,6 +44,7 @@ export const styles = {
   `,
   children: () => css`
     width: 100%;
+    height: 100%;
     overflow: auto;
   `,
   scroll: (isOpen: boolean) => css`

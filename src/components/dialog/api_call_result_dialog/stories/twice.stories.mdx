@@ -1,0 +1,49 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { APICallResultDialog } from '../';
+
+export const props = {
+  isOpen: true,
+  isFirstTime: true,
+  onClose: () => alert('props.onClose()が起動'),
+  content: {
+    width: 'auto',
+    height: 'auto',
+  },
+  error: 'API の取得に失敗',
+};
+
+<Meta
+  title="design_system/dialog/api_call_result_dialog/twice"
+  component={() => (
+    <div>
+      <APICallResultDialog
+        {...{
+          ...props,
+          content: {
+            width: '300px',
+            height: '300px',
+          },
+          error: 'API の取得に失敗1',
+        }}
+      />
+      <APICallResultDialog
+        {...{
+          ...props,
+          content: {
+            width: '200px',
+            height: '200px',
+          },
+          error: 'API の取得に失敗2',
+        }}
+      />
+    </div>
+  )}
+/>
+
+# design_system/dialog/api_call_result_dialog/twice
+
+ダイアログを重ねて表示する
+
+<Story name="twice"></Story>
+
+<Props story="twice" />

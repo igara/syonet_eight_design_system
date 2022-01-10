@@ -41,6 +41,7 @@ export const styles = {
     position: absolute;
     top: 12px;
     right: 12px;
+    cursor: pointer;
   `,
   children: () => css`
     width: 100%;

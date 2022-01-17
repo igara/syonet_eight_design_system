@@ -11,36 +11,42 @@ describe('use_swr_shared_state', () => {
   test('default', async () => {
     const Test1Component = () => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
+      const [state1, setState1] = useSWRSharedState('aaaa');
+      const [state2, setState2] = useSWRSharedState('aaaa');
+
+      return (
+        <div>
+          state:{state1}
+          {state2}
+        </div>
+      );
+    };
+
+    TestingLibrary.render(<Test1Component />);
+    expect(TestingLibrary.screen.getByText('state:')).toBeInTheDocument();
+
+    const Test2Component = () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const [state1, setState1] = useSWRSharedState('aaaa', 'hoge');
       setState1('fuga');
       const [state2, setState2] = useSWRSharedState('aaaa');
 
       return (
         <div>
-          {state1}
+          state:{state1}
           {state2}
         </div>
       );
     };
 
-    const Test2Component = () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const [state1, setState1] = useSWRSharedState('aaaa');
-      setState1('fuga');
-      const [state2, setState2] = useSWRSharedState('aaaa');
+    TestingLibrary.cleanup();
 
-      return (
-        <div>
-          {state1}
-          {state2}
-        </div>
-      );
-    };
+    TestingLibrary.render(<Test2Component />);
+    expect(TestingLibrary.screen.getByText('state:hogefuga')).toBeInTheDocument();
+
+    TestingLibrary.cleanup();
 
     TestingLibrary.render(<Test1Component />);
-    expect(TestingLibrary.screen.getByText('hogefuga')).toBeInTheDocument();
-
-    TestingLibrary.render(<Test1Component />);
-    expect(TestingLibrary.screen.getByText('fugafuga')).toBeInTheDocument();
+    expect(TestingLibrary.screen.getByText('state:fugafuga')).toBeInTheDocument();
   });
 });

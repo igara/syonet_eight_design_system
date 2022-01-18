@@ -135,7 +135,7 @@ export const main = () => {
     recursive: true,
   });
   fs.writeFileSync(
-    `${componentFullPath}/stories/dafault.stories.mdx`,
+    `${componentFullPath}/stories/default.stories.mdx`,
     templates['stories/default.stories.mdx'],
   );
   fs.writeFileSync(

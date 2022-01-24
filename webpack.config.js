@@ -45,6 +45,11 @@ module.exports = (env, argv) => {
         commonjs2: 'swr',
         amd: 'swr',
       },
+      recoil: {
+        commonjs: 'recoil',
+        commonjs2: 'recoil',
+        amd: 'recoil',
+      },
     },
     plugins: [
       new FileManagerPlugin({

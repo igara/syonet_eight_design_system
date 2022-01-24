@@ -1,0 +1,60 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import { GlobalDialog, useGlobalDialogStateValue } from '../';
+import { RecoilRoot } from 'recoil';
+
+export const Component = () => {
+  const uid1 = 'aaaaa';
+  const uid2 = 'bbbbb';
+  const uid3 = 'ccccc';
+  const uid4 = 'ddddd';
+  return (
+    <RecoilRoot>
+      <GlobalDialog
+        uid={uid1}
+        content={{
+          width: '400px',
+          height: '400px',
+        }}>
+        aaaaaa
+      </GlobalDialog>
+      <GlobalDialog
+        uid={uid2}
+        content={{
+          width: '300px',
+          height: '300px',
+        }}>
+        bbbbbb
+      </GlobalDialog>
+      <GlobalDialog
+        uid={uid3}
+        content={{
+          width: '200px',
+          height: '200px',
+        }}>
+        ccccc
+      </GlobalDialog>
+      <GlobalDialog
+        uid={uid4}
+        content={{
+          width: '100px',
+          height: '100px',
+        }}>
+        ddddd
+      </GlobalDialog>
+    </RecoilRoot>
+  );
+};
+
+<Meta title="design_system/dialog/global_dialog/default" component={Component} />
+
+# design_system/dialog/global_dialog/default
+
+global_dialog の説明
+
+<Story name="default" args={{}}></Story>
+
+<Source>
+  <Component />
+</Source>
+
+<Props story="default" />

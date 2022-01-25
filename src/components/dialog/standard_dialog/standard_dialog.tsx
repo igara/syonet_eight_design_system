@@ -28,9 +28,9 @@ export const StandardDialog: React.FC<StandardDialogProps> = (props) => {
         onClick={(e) => e.stopPropagation()}>
         <div css={Styels.styles.children()}>{props.children}</div>
 
-        <span css={Styels.styles.close()} onClick={props.onClose}>
+        <button css={Styels.styles.close()} onClick={props.onClose} type="button">
           <CloseIcon />
-        </span>
+        </button>
       </div>
     </dialog>
   );

@@ -39,9 +39,14 @@ export const styles = {
   `,
   close: () => css`
     position: absolute;
+    padding: 0;
     top: 12px;
     right: 12px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    outline: none;
+    appearance: none;
   `,
   children: () => css`
     width: 100%;

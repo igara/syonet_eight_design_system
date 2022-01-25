@@ -54,6 +54,7 @@ export const useOnCloseCallback = (args: {
   globalDialogState: GlobalDialogState;
   setGlobalDialogState: SetterOrUpdater<GlobalDialogState>;
   setGlobalDialogNextNumberState: SetterOrUpdater<GlobalDialogNextNumberState>;
+  onClose: (() => void) | undefined;
 }) => {
   return useRecoilCallback(
     () => () => {
@@ -67,6 +68,8 @@ export const useOnCloseCallback = (args: {
           return currVal;
         }, []),
       );
+
+      args.onClose && args.onClose();
     },
     [args],
   );

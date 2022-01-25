@@ -18,5 +18,6 @@ export declare const useOnCloseCallback: (args: {
     globalDialogState: GlobalDialogState;
     setGlobalDialogState: SetterOrUpdater<GlobalDialogState>;
     setGlobalDialogNextNumberState: SetterOrUpdater<GlobalDialogNextNumberState>;
+    onClose: (() => void) | undefined;
 }) => () => void;
 export {};

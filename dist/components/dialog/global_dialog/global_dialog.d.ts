@@ -2,6 +2,6 @@ import React from 'react';
 import { StandardDialogProps } from '../';
 declare type Props = {
     uid: string;
-} & StandardDialogProps;
+} & Partial<StandardDialogProps>;
 export declare const GlobalDialog: React.FC<Props>;
 export {};

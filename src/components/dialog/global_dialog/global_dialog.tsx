@@ -1,5 +1,4 @@
 import React from 'react';
-// import * as Styels from './global_dialog.styles';
 import {
   useAddGlobalDialogStateEffect,
   useOnCloseCallback,
@@ -10,7 +9,7 @@ import { StandardDialog, StandardDialogProps } from '../';
 
 type Props = {
   uid: string;
-} & StandardDialogProps;
+} & Partial<StandardDialogProps>;
 
 export const GlobalDialog: React.FC<Props> = (props) => {
   const [globalDialogState, setGlobalDialogState] = useGlobalDialogState();
@@ -32,6 +31,7 @@ export const GlobalDialog: React.FC<Props> = (props) => {
     globalDialogState,
     setGlobalDialogState,
     setGlobalDialogNextNumberState,
+    onClose: props.onClose,
   });
 
   return stateIndex === globalDialogNextNumberState ? (

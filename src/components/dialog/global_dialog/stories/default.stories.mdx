@@ -1,24 +1,30 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
 import { GlobalDialog, useGlobalDialogStateValue } from '../';
+import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
+import { v4 as uuid } from 'uuid';
+
+export const uuid1 = uuid();
+export const uuid2 = uuid();
+export const uuid3 = uuid();
+export const uuid4 = uuid();
+export const uuid5 = uuid();
 
 export const Component = () => {
-  const uid1 = 'aaaaa';
-  const uid2 = 'bbbbb';
-  const uid3 = 'ccccc';
-  const uid4 = 'ddddd';
+  const [uid5, setUid5] = useState();
   return (
     <RecoilRoot>
       <GlobalDialog
-        uid={uid1}
+        uid={uuid1}
         content={{
           width: '400px',
           height: '400px',
-        }}>
+        }}
+        onClose={() => setUid5(uuid5)}>
         aaaaaa
       </GlobalDialog>
       <GlobalDialog
-        uid={uid2}
+        uid={uuid2}
         content={{
           width: '300px',
           height: '300px',
@@ -26,7 +32,7 @@ export const Component = () => {
         bbbbbb
       </GlobalDialog>
       <GlobalDialog
-        uid={uid3}
+        uid={uuid3}
         content={{
           width: '200px',
           height: '200px',
@@ -34,7 +40,7 @@ export const Component = () => {
         ccccc
       </GlobalDialog>
       <GlobalDialog
-        uid={uid4}
+        uid={uuid4}
         content={{
           width: '100px',
           height: '100px',
@@ -42,6 +48,16 @@ export const Component = () => {
         onClose={() => alert('dddddを閉じる')}>
         ddddd
       </GlobalDialog>
+      {uid5 && (
+        <GlobalDialog
+          uid={uuid5}
+          content={{
+            width: '50px',
+            height: '50px',
+          }}>
+          eeeee
+        </GlobalDialog>
+      )}
     </RecoilRoot>
   );
 };

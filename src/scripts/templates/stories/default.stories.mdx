@@ -1,7 +1,8 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
 import { XXXXX } from '../';
 
-<Meta title="TITLE/default" component={XXXXX} />
+<Meta title="TITLE/default" component={XXXXX} decorators={[withMock]} />
 
 # TITLE/default
 
@@ -9,9 +10,14 @@ xxxxx の説明
 
 <Story
   name="default"
-  args={{
-    size: 20,
-    color: 'black',
+  args={{}}
+  parameters={{
+    nextRouter: {
+      path: '',
+      asPath: '',
+      query: {},
+    },
+    mockData: [],
   }}></Story>
 
 <Source>

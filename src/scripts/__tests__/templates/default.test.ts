@@ -95,9 +95,10 @@ describe('Fuga', () => {
     expect(`export * from './fuga';
 `).toBe(spyFSWriteFileSync.mock.calls[1][1]);
     expect(`import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
 import { Fuga } from '../';
 
-<Meta title="design_system/hoge/fuga/default" component={Fuga} />
+<Meta title="design_system/hoge/fuga/default" component={Fuga} decorators={[withMock]} />
 
 # design_system/hoge/fuga/default
 
@@ -105,9 +106,14 @@ fuga の説明
 
 <Story
   name="default"
-  args={{
-    size: 20,
-    color: 'black',
+  args={{}}
+  parameters={{
+    nextRouter: {
+      path: '',
+      asPath: '',
+      query: {},
+    },
+    mockData: [],
   }}></Story>
 
 <Source>
@@ -193,9 +199,10 @@ describe('Fuga', () => {
     expect(`export * from './fuga';
 `).toBe(spyFSWriteFileSync.mock.calls[1][1]);
     expect(`import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
 import { Fuga } from '../';
 
-<Meta title="www/hoge/fuga/default" component={Fuga} />
+<Meta title="www/hoge/fuga/default" component={Fuga} decorators={[withMock]} />
 
 # www/hoge/fuga/default
 
@@ -203,9 +210,14 @@ fuga の説明
 
 <Story
   name="default"
-  args={{
-    size: 20,
-    color: 'black',
+  args={{}}
+  parameters={{
+    nextRouter: {
+      path: '',
+      asPath: '',
+      query: {},
+    },
+    mockData: [],
   }}></Story>
 
 <Source>

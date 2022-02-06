@@ -10,7 +10,7 @@ export const main = () => {
   const componentPathKeyValue = process.argv.join().match(/path=\S*/);
   if (!(componentPathKeyValue && componentPathKeyValue.length)) {
     console.error(`${colors.red}
-    not found 'paths=xxxxx'
+    not found 'path=xxxxx'
 
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
@@ -45,7 +45,7 @@ export const main = () => {
 
   if (!foundProjectName) {
     console.error(`${colors.red}
-    not found projects 'paths=projects/syonet_eight_xxxxx'
+    not found projects 'path=projects/syonet_eight_xxxxx'
 
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx

@@ -1,0 +1,33 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { Text } from '../';
+
+<Meta
+  title="design_system/inputs/text/default"
+  component={Text}
+  decorators={[withMock]}
+/>
+
+# design_system/inputs/text/default
+
+text の説明
+
+<Story
+  name="default"
+  args={{
+    placeholder: 'サンプルテキスト',
+  }}
+  parameters={{
+    nextRouter: {
+      path: '',
+      asPath: '',
+      query: {},
+    },
+    mockData: [],
+  }}></Story>
+
+<Source>
+  <Text />
+</Source>
+
+<Props story="default" />

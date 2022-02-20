@@ -139,11 +139,11 @@ export const styles = {
 };
 `).toBe(spyFSWriteFileSync.mock.calls[3][1]);
     expect(`import React from 'react';
-import * as Styels from './fuga.styles';
+import * as Styles from './fuga.styles';
 
 interface Props {
-  size?: Styels.Props['size'];
-  color?: Styels.Props['color'];
+  size?: Styles.Props['size'];
+  color?: Styles.Props['color'];
 }
 
 export const Fuga: React.FC<Props> = (props) => {
@@ -243,11 +243,11 @@ export const styles = {
 };
 `).toBe(spyFSWriteFileSync.mock.calls[3][1]);
     expect(`import React from 'react';
-import * as Styels from './fuga.styles';
+import * as Styles from './fuga.styles';
 
 interface Props {
-  size?: Styels.Props['size'];
-  color?: Styels.Props['color'];
+  size?: Styles.Props['size'];
+  color?: Styles.Props['color'];
 }
 
 export const Fuga: React.FC<Props> = (props) => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import * as Styels from './xxxxx.styles';
+import * as Styles from './xxxxx.styles';
 
 interface Props {
-  size?: Styels.Props['size'];
-  color?: Styels.Props['color'];
+  size?: Styles.Props['size'];
+  color?: Styles.Props['color'];
 }
 
 export const XXXXX: React.FC<Props> = (props) => {

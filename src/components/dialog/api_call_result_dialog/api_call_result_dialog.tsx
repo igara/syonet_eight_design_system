@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Styels from './api_call_result_dialog.style';
+import * as Styles from './api_call_result_dialog.style';
 import { StandardDialog, StandardDialogProps } from '@design_system/src/components';
 import {
   useIsOpenState,
@@ -19,10 +19,10 @@ export const APICallResultDialog: React.FC<APICallResultDialogProps> = (props) =
 
   return (
     <StandardDialog {...props} isOpen={isOpen} onClose={useCloseCallback(setIsopen)}>
-      <label css={Styels.styles.label()}>
+      <label css={Styles.styles.label()}>
         システムエラー:
         <br />
-        <textarea css={Styels.styles.textarea()} readOnly={true} value={props.error} />
+        <textarea css={Styles.styles.textarea()} readOnly={true} value={props.error} />
       </label>
     </StandardDialog>
   );

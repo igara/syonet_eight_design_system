@@ -30,7 +30,9 @@ export const Text: React.FC<Props> = (props) => {
 
   return (
     <div {...wrapperAttributes}>
-      <input type={props.type ? props.type : 'text'} {...inputAttributes}></input>
+      <input type={props.type ? props.type : 'text'} {...inputAttributes}>
+        {props.children}
+      </input>
     </div>
   );
 };

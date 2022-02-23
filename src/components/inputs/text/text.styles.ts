@@ -13,5 +13,6 @@ export const styles = {
     border: none;
     outline: none;
     background: transparent;
+    font-size: 16px;
   `,
 };

@@ -23,7 +23,7 @@ describe('template script', () => {
     expect([
       [
         `\u001b[31m
-    not found 'paths=xxxxx'
+    not found 'path=xxxxx'
 
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx
@@ -50,7 +50,7 @@ describe('template script', () => {
     expect([
       [
         `\u001b[31m
-    not found projects 'paths=projects/syonet_eight_xxxxx'
+    not found projects 'path=projects/syonet_eight_xxxxx'
 
     example)
     yarn templates path=projects/syonet_eight_design_system/src/components/xxxx

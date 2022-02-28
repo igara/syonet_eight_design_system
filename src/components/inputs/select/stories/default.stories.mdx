@@ -1,0 +1,45 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { Select } from '../';
+
+export const Component = () => {
+  return (
+    <div>
+      <Select
+        items={[
+          { value: '1', label: '1' },
+          {
+            value:
+              '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999',
+            label:
+              '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999',
+          },
+          { value: 'hoge', label: 'hoge' },
+        ]}
+      />
+      <br />1
+      <br />2
+      <br />3
+      <br />4
+      <br />5
+      <br />6
+      <br />7
+      <br />8
+      <br />9
+    </div>
+  );
+};
+
+<Meta title="design_system/inputs/select/default" component={Component} />
+
+# design_system/inputs/select/default
+
+select の説明
+
+<Story name="default" args={{}}></Story>
+
+<Source>
+  <Component />
+</Source>
+
+<Props story="default" />

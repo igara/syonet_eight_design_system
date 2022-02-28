@@ -18,7 +18,7 @@ export const styles = {
       stroke: ${props.borderColor};
     }
 
-    rect {
+    path {
       fill: ${props.color};
     }
   `,

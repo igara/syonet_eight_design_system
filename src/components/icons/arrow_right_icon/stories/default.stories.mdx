@@ -1,0 +1,28 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { ArrowRightIcon } from '../';
+
+<Meta
+  title="design_system/icons/arrow_right_icon/default"
+  component={ArrowRightIcon}
+  decorators={[withMock]}
+/>
+
+# design_system/icons/arrow_right_icon/default
+
+arrow_right_icon の説明
+
+<Story
+  name="default"
+  args={{
+    size: 20,
+    color: 'black',
+    backgroundColor: '#C4C4C4',
+    borderColor: 'black',
+  }}></Story>
+
+<Source>
+  <ArrowRightIcon />
+</Source>
+
+<Props story="default" />

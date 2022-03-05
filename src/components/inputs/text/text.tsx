@@ -1,4 +1,4 @@
-import { SerializedStyles } from '@emotion/react';
+import { SerializedStyles, css } from '@emotion/react';
 import React from 'react';
 import * as Styles from './text.styles';
 
@@ -15,16 +15,16 @@ interface Props {
 
 export const Text: React.FC<Props> = (props) => {
   const wrapperAttributes = {
-    css: {
-      ...Styles.styles.wrapper(),
-      ...props.wrapperCSS,
-    },
+    css: css`
+      ${Styles.styles.wrapper()}
+      ${props.wrapperCSS}
+    `,
   };
   const inputAttributes = {
-    css: {
-      ...Styles.styles.input(),
-      ...props.inputCSS,
-    },
+    css: css`
+      ${Styles.styles.input()}
+      ${props.inputCSS}
+    `,
     type: props.type ? props.type : 'text',
     placeholder: props.placeholder,
     readOnly: props.readOnly ? props.readOnly : false,

@@ -1,10 +1,7 @@
 import React from 'react';
-import * as Styles from './check_icon.styles';
+import { SerializedStyles } from '@emotion/react';
 interface Props {
-    size?: Styles.Props['size'];
-    color?: Styles.Props['color'];
-    backgroundColor?: Styles.Props['backgroundColor'];
-    borderColor?: Styles.Props['borderColor'];
+    iconCSS?: SerializedStyles;
 }
 export declare const CheckIcon: React.FC<Props>;
 export {};

@@ -1,5 +1,6 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
 import { StandardDialog } from '../';
+import { css } from '@emotion/react';
 
 <Meta title="design_system/dialog/standard_dialog/default" component={StandardDialog} />
 
@@ -12,10 +13,10 @@ import { StandardDialog } from '../';
   args={{
     isOpen: true,
     onClose: () => alert('props.onClose()が起動'),
-    content: {
-      width: '200px',
-      height: '200px',
-    },
+    contentCSS: css`
+      width: 200px;
+      height: 200px;
+    `,
     children: <div>ダイアログ</div>,
   }}></Story>
 

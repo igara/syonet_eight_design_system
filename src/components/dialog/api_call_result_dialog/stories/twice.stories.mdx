@@ -1,14 +1,11 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
 import { APICallResultDialog } from '../';
+import { css } from '@emotion/react';
 
 export const props = {
   isOpen: true,
   isFirstTime: true,
   onClose: () => alert('props.onClose()が起動'),
-  content: {
-    width: 'auto',
-    height: 'auto',
-  },
   error: 'API の取得に失敗',
 };
 
@@ -19,20 +16,20 @@ export const props = {
       <APICallResultDialog
         {...{
           ...props,
-          content: {
-            width: '300px',
-            height: '300px',
-          },
+          contentCSS: css`
+            width: 300px;
+            height: 300px;
+          `,
           error: 'API の取得に失敗1',
         }}
       />
       <APICallResultDialog
         {...{
           ...props,
-          content: {
-            width: '200px',
-            height: '200px',
-          },
+          contentCSS: css`
+            width: 200px;
+            height: 200px;
+          `,
           error: 'API の取得に失敗2',
         }}
       />

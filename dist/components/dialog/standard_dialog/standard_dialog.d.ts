@@ -1,11 +1,9 @@
 import React from 'react';
-import * as Styles from './standard_dialog.style';
+import { SerializedStyles } from '@emotion/react';
 export interface StandardDialogProps {
     isOpen: boolean;
     onClose: () => void;
-    content?: {
-        width?: Styles.ContentStyleProps['width'];
-        height?: Styles.ContentStyleProps['height'];
-    };
+    dialogCSS?: SerializedStyles;
+    contentCSS?: SerializedStyles;
 }
 export declare const StandardDialog: React.FC<StandardDialogProps>;

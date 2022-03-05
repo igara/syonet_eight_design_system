@@ -1,5 +1,5 @@
 import React from 'react';
-import { SerializedStyles } from '@emotion/react';
+import { SerializedStyles, css } from '@emotion/react';
 import * as Hooks from './select.hooks';
 import * as Styles from './select.styles';
 import { SelectIcon } from '@design_system/src/components/icons';
@@ -53,50 +53,50 @@ export const Select: React.FC<Props> = (props) => {
   );
 
   const wrapperAttributes = {
-    css: {
-      ...Styles.styles.wrapper(),
-    },
+    css: css`
+      ${Styles.styles.wrapper()}
+    `,
   };
   const selectAttributes = {
-    css: {
-      ...Styles.styles.select(),
-      ...props.selectCSS,
-    },
+    css: css`
+      ${Styles.styles.select()}
+      ${props.selectCSS}
+    `,
     ref: selectRef,
   };
   const dummyBackgroundAttributes = {
-    css: {
-      ...Styles.styles.dummyBackground({
+    css: css`
+      ${Styles.styles.dummyBackground({
         displayDummySelect,
-      }),
-    },
+      })}
+    `,
     onClick: () => {
       onClickDummyBackgroundCallback();
     },
   };
   const dummySelectedValueAttributes = {
-    css: {
-      ...Styles.styles.dummySelectedValue(),
-      ...props.dummySelectedValueCSS,
-    },
+    css: css`
+      ${Styles.styles.dummySelectedValue()}
+      ${props.dummySelectedValueCSS}
+    `,
     onClick: () => {
       onClickDummySelectedValueCallback();
       props.onClick && props.onClick();
     },
   };
   const dummySelectAttributes = {
-    css: {
-      ...Styles.styles.dummySelect({
+    css: css`
+      ${Styles.styles.dummySelect({
         displayDummySelect,
-      }),
-      ...props.dummySelectCSS,
-    },
+      })}
+      ${props.dummySelectCSS}
+    `,
   };
   const dummyOptionAttributes = {
-    css: {
-      ...Styles.styles.dummyOption(),
-      ...props.dummyOptionCSS,
-    },
+    css: css`
+      ${Styles.styles.dummyOption()}
+      ${props.dummyOptionCSS}
+    `,
     onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       onClickDummyOptionCallback(event);
       props.onChange && props.onChange(event);

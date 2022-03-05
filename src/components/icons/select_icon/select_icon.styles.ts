@@ -1,25 +1,17 @@
-import * as CSS from 'csstype';
 import { css } from '@emotion/react';
 
-export interface Props {
-  size: number;
-  color: CSS.Property.Fill;
-  backgroundColor: CSS.Property.Fill;
-  borderColor: CSS.Property.Stroke;
-}
-
 export const styles = {
-  selectIcon: (props: Props) => css`
-    width: ${props.size}px;
-    height: ${props.size}px;
+  icon: () => css`
+    width: 20px;
+    height: 20px;
 
     circle {
-      fill: ${props.backgroundColor};
-      stroke: ${props.borderColor};
+      fill: black;
+      stroke: black;
     }
 
     path {
-      fill: ${props.color};
+      fill: #c4c4c4;
     }
   `,
 };

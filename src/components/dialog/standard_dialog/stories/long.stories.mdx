@@ -1,5 +1,6 @@
 import { Meta, Story, Source, Props } from '@storybook/addon-docs';
 import { StandardDialog } from '../';
+import { css } from '@emotion/react';
 
 <Meta title="design_system/dialog/standard_dialog/long" component={StandardDialog} />
 
@@ -123,10 +124,10 @@ export const Template = (args) => (
   args={{
     isOpen: true,
     onClose: () => alert('props.onClose()が起動'),
-    content: {
-      width: '200px',
-      height: '200px',
-    },
+    contentCSS: css`
+      width: 200px;
+      height: 200px;
+    `,
     children: <LongComponent />,
   }}>
   {Template.bind({})}

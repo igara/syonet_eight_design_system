@@ -1,4 +1,4 @@
-import { SerializedStyles } from '@emotion/react';
+import { SerializedStyles, css } from '@emotion/react';
 import React from 'react';
 import * as Styles from './number_area.styles';
 import * as Hooks from './number_area.hooks';
@@ -39,38 +39,38 @@ export const NumberArea: React.FC<Props> = (props) => {
   });
 
   const wrapperAttributes = {
-    css: {
-      ...Styles.styles.wrapper(),
-      ...props.wrapperCSS,
-    },
+    css: css`
+      ${Styles.styles.wrapper()}
+      ${props.wrapperCSS}
+    `,
   };
   const leftButtonAttributes = {
-    css: {
-      ...Styles.styles.button(),
-    },
+    css: css`
+      ${Styles.styles.button()}
+    `,
     onClick: () => {
       onClickLeftButtonCallback();
     },
   };
   const rightButtonAttributes = {
-    css: {
-      ...Styles.styles.button(),
-    },
+    css: css`
+      ${Styles.styles.button()}
+    `,
     onClick: () => {
       onClickRightButtonCallback();
     },
   };
   const inputAreaAttributes = {
-    css: {
-      ...Styles.styles.inputArea(),
-    },
+    css: css`
+      ${Styles.styles.inputArea()}
+    `,
   };
   const fontMaxLength = props.max.toString().length;
   const inputAttributes = {
-    css: {
-      ...Styles.styles.input(),
-      ...props.inputCSS,
-    },
+    css: css`
+      ${Styles.styles.input()}
+      ${props.inputCSS}
+    `,
     type: 'text',
     size: fontMaxLength,
     maxLength: fontMaxLength,
@@ -83,9 +83,9 @@ export const NumberArea: React.FC<Props> = (props) => {
   };
 
   const maxAttributes = {
-    css: {
-      ...Styles.styles.max(),
-    },
+    css: css`
+      ${Styles.styles.max()}
+    `,
   };
 
   return (

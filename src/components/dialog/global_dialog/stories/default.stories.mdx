@@ -3,6 +3,7 @@ import { GlobalDialog, useGlobalDialogStateValue } from '../';
 import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { v4 as uuid } from 'uuid';
+import { css } from '@emotion/react';
 
 export const uuid1 = uuid();
 export const uuid2 = uuid();
@@ -16,45 +17,45 @@ export const Component = () => {
     <RecoilRoot>
       <GlobalDialog
         uid={uuid1}
-        content={{
-          width: '400px',
-          height: '400px',
-        }}
+        contentCSS={css`
+          width: 400px;
+          height: 400px;
+        `}
         onClose={() => setUid5(uuid5)}>
         aaaaaa
       </GlobalDialog>
       <GlobalDialog
         uid={uuid2}
-        content={{
-          width: '300px',
-          height: '300px',
-        }}>
+        contentCSS={css`
+          width: 300px;
+          height: 300px;
+        `}>
         bbbbbb
       </GlobalDialog>
       <GlobalDialog
         uid={uuid3}
-        content={{
-          width: '200px',
-          height: '200px',
-        }}>
+        contentCSS={css`
+          width: 200px;
+          height: 200px;
+        `}>
         ccccc
       </GlobalDialog>
       <GlobalDialog
         uid={uuid4}
-        content={{
-          width: '100px',
-          height: '100px',
-        }}
+        contentCSS={css`
+          width: 100px;
+          height: 100px;
+        `}
         onClose={() => alert('dddddを閉じる')}>
         ddddd
       </GlobalDialog>
       {uid5 && (
         <GlobalDialog
           uid={uuid5}
-          content={{
-            width: '50px',
-            height: '50px',
-          }}>
+          contentCSS={css`
+            width: 50px;
+            height: 50px;
+          `}>
           eeeee
         </GlobalDialog>
       )}

@@ -1,13 +1,7 @@
 import { css } from '@emotion/react';
-import * as CSS from 'csstype';
 
-export type StandardDialogStyleProps = {
+type StandardDialogStyleProps = {
   isOpen: boolean;
-};
-
-export type ContentStyleProps = {
-  width: CSS.Property.Width;
-  height: CSS.Property.Height;
 };
 
 export const styles = {
@@ -24,15 +18,15 @@ export const styles = {
     border: 0;
     background: rgba(50, 50, 50, 0.5);
   `,
-  content: (props: ContentStyleProps) => css`
+  content: () => css`
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 32px;
-    width: ${props.width};
-    height: ${props.width};
+    width: auto;
+    height: auto;
     border: 2px solid;
     border-radius: 20px;
     background: white;

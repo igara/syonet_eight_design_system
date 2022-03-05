@@ -1,5 +1,6 @@
 import React from 'react';
 import { SerializedStyles } from '@emotion/react';
+import * as Hooks from './select.hooks';
 import * as Styles from './select.styles';
 import { SelectIcon } from '@design_system/src/components/icons';
 
@@ -18,23 +19,24 @@ interface Props {
 }
 
 export const Select: React.FC<Props> = (props) => {
-  const selectRef = React.useRef<HTMLSelectElement | null>(null);
-  const [displayDimmySelect, setDisplayDimmySelect] = React.useState(false);
-  const [selectValue, setSelectValue] = React.useState(
+  const selectRef = Hooks.useSelectRef();
+  const [displayDummySelect, setDisplayDummySelect] = Hooks.useDisplayDummySelectState();
+  const [selectValue, setSelectValue] = Hooks.useSelectValueState(
     props.defaultValue ? props.defaultValue : props.items[0].value,
   );
-  const [selectLabel, setSelectLabel] = React.useState(
+  const [selectLabel, setSelectLabel] = Hooks.useSelectLabelState(
     props.items.find((item) => item.value === selectValue)?.label || props.items[0].label,
   );
-  const onClickDummySelectedValueCallback = React.useCallback(() => {
-    setDisplayDimmySelect(!displayDimmySelect);
-  }, [setDisplayDimmySelect, displayDimmySelect]);
-  const onClickDummyBackgroundCallback = React.useCallback(() => {
-    setDisplayDimmySelect(false);
-  }, [setDisplayDimmySelect]);
+  const onClickDummySelectedValueCallback = Hooks.useOnClickDummySelectedValueCallback({
+    displayDummySelect,
+    setDisplayDummySelect,
+  });
+  const onClickDummyBackgroundCallback = Hooks.useOnClickDummyBackgroundCallback({
+    setDisplayDummySelect,
+  });
   const onClickDummyOptionCallback = React.useCallback(
     (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      setDisplayDimmySelect(false);
+      setDisplayDummySelect(false);
 
       if (event.currentTarget.dataset.value && selectRef.current) {
         const label = props.items.find(
@@ -47,7 +49,7 @@ export const Select: React.FC<Props> = (props) => {
         }
       }
     },
-    [setSelectLabel, setSelectValue, setDisplayDimmySelect, props.items],
+    [setSelectLabel, setSelectValue, setDisplayDummySelect, props.items],
   );
 
   const wrapperAttributes = {
@@ -65,7 +67,7 @@ export const Select: React.FC<Props> = (props) => {
   const dummyBackgroundAttributes = {
     css: {
       ...Styles.styles.dummyBackground({
-        displayDimmySelect,
+        displayDummySelect,
       }),
     },
     onClick: () => {
@@ -85,7 +87,7 @@ export const Select: React.FC<Props> = (props) => {
   const dummySelectAttributes = {
     css: {
       ...Styles.styles.dummySelect({
-        displayDimmySelect,
+        displayDummySelect,
       }),
       ...props.dummySelectCSS,
     },

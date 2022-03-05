@@ -1,8 +1,8 @@
 declare type DummyBackgrounProps = {
-    displayDimmySelect: boolean;
+    displayDummySelect: boolean;
 };
 declare type DummySelectProps = {
-    displayDimmySelect: boolean;
+    displayDummySelect: boolean;
 };
 export declare const styles: {
     wrapper: () => import("@emotion/react").SerializedStyles;

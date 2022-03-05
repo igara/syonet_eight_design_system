@@ -10,23 +10,32 @@ interface Props {
   defaultValue: number;
   min: number;
   max: number;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: (value: number) => void;
   onClick?: React.MouseEventHandler<HTMLInputElement>;
-  onDownClick?: React.MouseEventHandler<HTMLInputElement>;
-  onUpClick?: React.MouseEventHandler<HTMLInputElement>;
 }
 
 export const NumberArea: React.FC<Props> = (props) => {
+  const inputRef = Hooks.useInputRef();
   const [selectValue, setSelectValue] = Hooks.useSelectValueState(props.defaultValue);
   const onClickLeftButtonCallback = Hooks.useOnClickLeftButtonCallback({
     setSelectValue,
     min: props.min,
     selectValue,
+    onChange: props.onChange,
+    inputRef,
   });
   const onClickRightButtonCallback = Hooks.useOnClickRightButtonCallback({
     setSelectValue,
     max: props.max,
     selectValue,
+    onChange: props.onChange,
+    inputRef,
+  });
+  const onChangeInputCallback = Hooks.useOnChangeInputCallback({
+    setSelectValue,
+    max: props.max,
+    min: props.min,
+    onChange: props.onChange,
   });
 
   const wrapperAttributes = {
@@ -35,17 +44,17 @@ export const NumberArea: React.FC<Props> = (props) => {
       ...props.wrapperCSS,
     },
   };
-  const leftButtonAreaAttributes = {
+  const leftButtonAttributes = {
     css: {
-      ...Styles.styles.buttonArea(),
+      ...Styles.styles.button(),
     },
     onClick: () => {
       onClickLeftButtonCallback();
     },
   };
-  const rightButtonAreaAttributes = {
+  const rightButtonAttributes = {
     css: {
-      ...Styles.styles.buttonArea(),
+      ...Styles.styles.button(),
     },
     onClick: () => {
       onClickRightButtonCallback();
@@ -65,9 +74,12 @@ export const NumberArea: React.FC<Props> = (props) => {
     type: 'text',
     size: fontMaxLength,
     maxLength: fontMaxLength,
-    value: selectValue,
-    onChange: props.onChange ? props.onChange : () => {},
+    defaultValue: selectValue,
+    onChange: (event: any) => {
+      onChangeInputCallback(event);
+    },
     onClick: props.onClick ? props.onClick : () => {},
+    ref: inputRef,
   };
 
   const maxAttributes = {
@@ -78,16 +90,16 @@ export const NumberArea: React.FC<Props> = (props) => {
 
   return (
     <div {...wrapperAttributes}>
-      <span {...leftButtonAreaAttributes}>
+      <button {...leftButtonAttributes}>
         <ArrowLeftIcon />
-      </span>
+      </button>
       <div {...inputAreaAttributes}>
         <input {...inputAttributes}></input>
         <div {...maxAttributes}> / {props.max}</div>
       </div>
-      <span {...rightButtonAreaAttributes}>
+      <button {...rightButtonAttributes}>
         <ArrowRightIcon />
-      </span>
+      </button>
     </div>
   );
 };

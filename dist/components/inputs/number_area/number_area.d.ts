@@ -6,10 +6,8 @@ interface Props {
     defaultValue: number;
     min: number;
     max: number;
-    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    onChange?: (value: number) => void;
     onClick?: React.MouseEventHandler<HTMLInputElement>;
-    onDownClick?: React.MouseEventHandler<HTMLInputElement>;
-    onUpClick?: React.MouseEventHandler<HTMLInputElement>;
 }
 export declare const NumberArea: React.FC<Props>;
 export {};

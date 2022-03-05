@@ -8,16 +8,23 @@ export const styles = {
     border: 1px solid black;
     border-radius: 4px;
   `,
-  buttonArea: () => css`
+  button: () => css`
+    padding: 0;
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
   `,
   inputArea: () => css`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
   `,
   input: () => css`
     height: 100%;
@@ -39,6 +46,5 @@ export const styles = {
   `,
   max: () => css`
     padding-left: 4px;
-    user-select: none;
   `,
 };

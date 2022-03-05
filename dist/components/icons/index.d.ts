@@ -5,3 +5,4 @@ export * from './arrow_down_icon';
 export * from './arrow_up_icon';
 export * from './arrow_left_icon';
 export * from './arrow_right_icon';
+export * from './check_icon';

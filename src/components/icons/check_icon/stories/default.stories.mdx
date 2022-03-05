@@ -1,0 +1,28 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { CheckIcon } from '../';
+
+<Meta
+  title="design_system/icons/check_icon/default"
+  component={CheckIcon}
+  decorators={[withMock]}
+/>
+
+# design_system/icons/check_icon/default
+
+check_icon の説明
+
+<Story
+  name="default"
+  args={{
+    size: 20,
+    color: 'black',
+    backgroundColor: '#C4C4C4',
+    borderColor: 'black',
+  }}></Story>
+
+<Source>
+  <CheckIcon />
+</Source>
+
+<Props story="default" />

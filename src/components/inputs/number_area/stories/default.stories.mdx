@@ -1,0 +1,35 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { NumberArea } from '../';
+
+<Meta
+  title="design_system/inputs/number_area/default"
+  component={NumberArea}
+  decorators={[withMock]}
+/>
+
+# design_system/inputs/number_area/default
+
+number_area の説明
+
+<Story
+  name="default"
+  args={{
+    defaultValue: 3,
+    min: 1,
+    max: 10,
+  }}
+  parameters={{
+    nextRouter: {
+      path: '',
+      asPath: '',
+      query: {},
+    },
+    mockData: [],
+  }}></Story>
+
+<Source>
+  <NumberArea />
+</Source>
+
+<Props story="default" />

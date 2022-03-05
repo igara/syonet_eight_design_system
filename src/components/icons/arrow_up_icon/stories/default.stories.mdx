@@ -1,0 +1,28 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { ArrowUpIcon } from '../';
+
+<Meta
+  title="design_system/icons/arrow_up_icon/default"
+  component={ArrowUpIcon}
+  decorators={[withMock]}
+/>
+
+# design_system/icons/arrow_up_icon/default
+
+arrow_up_icon の説明
+
+<Story
+  name="default"
+  args={{
+    size: 20,
+    color: 'black',
+    backgroundColor: '#C4C4C4',
+    borderColor: 'black',
+  }}></Story>
+
+<Source>
+  <ArrowUpIcon />
+</Source>
+
+<Props story="default" />

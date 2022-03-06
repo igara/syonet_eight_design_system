@@ -45,5 +45,6 @@ export const styles = {
   `,
   max: () => css`
     padding-left: 4px;
+    font-size: 16px;
   `,
 };

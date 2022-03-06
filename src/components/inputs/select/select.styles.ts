@@ -33,6 +33,7 @@ export const styles = {
     font-size: 16px;
     user-select: none;
     word-break: break-all;
+    cursor: pointer;
 
     label {
       width: 100%;
@@ -58,6 +59,7 @@ export const styles = {
   dummyOption: () => css`
     word-break: break-all;
     user-select: none;
+    cursor: pointer;
 
     :hover {
       color: white;

@@ -1,4 +1,4 @@
-export declare const breakpoints: {
+export declare const mediaQueryBreakpoints: {
     small: string;
     middle: string;
     large: string;

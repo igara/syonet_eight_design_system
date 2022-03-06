@@ -12,6 +12,8 @@ type UseOnClickButtonCallbackProps = {
   setChecked: React.Dispatch<React.SetStateAction<boolean>>;
   checked: boolean;
   inputRef: React.MutableRefObject<HTMLInputElement | null>;
+  value: string;
+  onClick?: (checked: boolean, value: string) => void;
 };
 export const useOnClickButtonCallback = (props: UseOnClickButtonCallbackProps) => {
   return React.useCallback(() => {
@@ -21,5 +23,7 @@ export const useOnClickButtonCallback = (props: UseOnClickButtonCallbackProps) =
     if (props.inputRef && props.inputRef.current) {
       props.inputRef.current.checked = checked;
     }
+
+    props.onClick && props.onClick(checked, props.value);
   }, [props]);
 };

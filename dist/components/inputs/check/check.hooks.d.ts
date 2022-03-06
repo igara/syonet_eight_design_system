@@ -5,6 +5,8 @@ declare type UseOnClickButtonCallbackProps = {
     setChecked: React.Dispatch<React.SetStateAction<boolean>>;
     checked: boolean;
     inputRef: React.MutableRefObject<HTMLInputElement | null>;
+    value: string;
+    onClick?: (checked: boolean, value: string) => void;
 };
 export declare const useOnClickButtonCallback: (props: UseOnClickButtonCallbackProps) => () => void;
 export {};

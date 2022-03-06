@@ -7,6 +7,8 @@ import { CheckIcon } from '@design_system/src/components/icons';
 interface Props {
   css?: SerializedStyles;
   defaultChecked: boolean;
+  onClick?: (checked: boolean, value: string) => void;
+  value: string;
 }
 
 export const Check: React.FC<Props> = (props) => {
@@ -16,6 +18,8 @@ export const Check: React.FC<Props> = (props) => {
     checked,
     setChecked,
     inputRef,
+    onClick: props.onClick,
+    value: props.value,
   });
 
   const buttonAttributes = {
@@ -39,6 +43,7 @@ export const Check: React.FC<Props> = (props) => {
     ref: inputRef,
     type: 'checkbox',
     defaultChecked: checked,
+    value: props.value,
   };
   const childrenAttributes = {
     css: css`

@@ -88,7 +88,9 @@ describe('Fuga', () => {
 
   test('初期表示', () => {
     const renderTest = TestingLibrary.render(<Fuga />);
-    expect('<div></div>').toBe(renderTest.baseElement.innerHTML);
+    expect(
+      '<div><div css="You have tried to stringify object returned from \`css\` function. It isn\\'t supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."></div></div>',
+    ).toBe(renderTest.baseElement.innerHTML);
   });
 });
 `).toBe(spyFSWriteFileSync.mock.calls[0][1]);
@@ -122,32 +124,28 @@ fuga の説明
 
 <Props story="default" />
 `).toBe(spyFSWriteFileSync.mock.calls[2][1]);
-    expect(`import * as CSS from 'csstype';
-import { css } from '@emotion/react';
-
-export interface Props {
-  size: number;
-  color: CSS.Property.Color;
-}
+    expect(`import { css } from '@emotion/react';
 
 export const styles = {
-  fuga: (props: Props) => css\`
-    width: \${props.size}px;
-    height: \${props.size}px;
-    color: \${props.color};
-  \`,
+  fuga: () => css\`\`,
 };
 `).toBe(spyFSWriteFileSync.mock.calls[3][1]);
     expect(`import React from 'react';
 import * as Styles from './fuga.styles';
+import { SerializedStyles, css } from '@emotion/react';
 
 interface Props {
-  size?: Styles.Props['size'];
-  color?: Styles.Props['color'];
+  css?: SerializedStyles;
 }
 
 export const Fuga: React.FC<Props> = (props) => {
-  return <></>;
+  const attributes = {
+    css: css\`
+      \${Styles.styles.fuga()}
+      \${props.css}
+    \`,
+  };
+  return <div {...attributes}></div>;
 };
 `).toBe(spyFSWriteFileSync.mock.calls[4][1]);
     expect(`import React from 'react';
@@ -192,7 +190,9 @@ describe('Fuga', () => {
 
   test('初期表示', () => {
     const renderTest = TestingLibrary.render(<Fuga />);
-    expect('<div></div>').toBe(renderTest.baseElement.innerHTML);
+    expect(
+      '<div><div css="You have tried to stringify object returned from \`css\` function. It isn\\'t supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."></div></div>',
+    ).toBe(renderTest.baseElement.innerHTML);
   });
 });
 `).toBe(spyFSWriteFileSync.mock.calls[0][1]);
@@ -226,32 +226,28 @@ fuga の説明
 
 <Props story="default" />
 `).toBe(spyFSWriteFileSync.mock.calls[2][1]);
-    expect(`import * as CSS from 'csstype';
-import { css } from '@emotion/react';
-
-export interface Props {
-  size: number;
-  color: CSS.Property.Color;
-}
+    expect(`import { css } from '@emotion/react';
 
 export const styles = {
-  fuga: (props: Props) => css\`
-    width: \${props.size}px;
-    height: \${props.size}px;
-    color: \${props.color};
-  \`,
+  fuga: () => css\`\`,
 };
 `).toBe(spyFSWriteFileSync.mock.calls[3][1]);
     expect(`import React from 'react';
 import * as Styles from './fuga.styles';
+import { SerializedStyles, css } from '@emotion/react';
 
 interface Props {
-  size?: Styles.Props['size'];
-  color?: Styles.Props['color'];
+  css?: SerializedStyles;
 }
 
 export const Fuga: React.FC<Props> = (props) => {
-  return <></>;
+  const attributes = {
+    css: css\`
+      \${Styles.styles.fuga()}
+      \${props.css}
+    \`,
+  };
+  return <div {...attributes}></div>;
 };
 `).toBe(spyFSWriteFileSync.mock.calls[4][1]);
     expect(`import React from 'react';

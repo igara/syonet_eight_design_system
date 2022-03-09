@@ -48,7 +48,7 @@ export const styles = {
     position: absolute;
     z-index: 99999;
     margin-top: 8px;
-    padding: 2px;
+    padding: 4px;
     display: ${props.displayDummySelect ? 'initial' : 'none'};
     width: 100%;
     background: white;
@@ -58,6 +58,8 @@ export const styles = {
     font-size: 16px;
   `,
   dummyOption: () => css`
+    display: flex;
+    align-items: center;
     word-break: break-all;
     user-select: none;
     cursor: pointer;
@@ -65,6 +67,16 @@ export const styles = {
     :hover {
       color: white;
       background: gray;
+    }
+
+    label {
+      padding-left: 4px;
+      width: 100%;
+    }
+  `,
+  checkdIcon: (checked: boolean) => css`
+    circle {
+      fill: ${checked ? 'black' : '#c4c4c4'};
     }
   `,
 };

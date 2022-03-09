@@ -1,0 +1,47 @@
+import { Meta, Story, Source, Props } from '@storybook/addon-docs';
+import withMock from 'storybook-addon-mock';
+import { MultiSelect } from '../';
+
+export const Component = () => {
+  return (
+    <div>
+      <MultiSelect
+        items={[
+          { value: '1', label: '1', onClick: () => alert(1), selected: true },
+          {
+            value:
+              '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999',
+            label:
+              '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999',
+            selected: true,
+          },
+          { value: 'hoge', label: 'hoge', onClick: () => alert('hoge'), selected: false },
+        ]}
+        selectName="selectを複数選択する"
+      />
+      <br />1
+      <br />2
+      <br />3
+      <br />4
+      <br />5
+      <br />6
+      <br />7
+      <br />8
+      <br />9
+    </div>
+  );
+};
+
+<Meta title="design_system/inputs/multi_select/default" component={Component} />
+
+# design_system/inputs/multi_select/default
+
+select の説明
+
+<Story name="default" args={{}}></Story>
+
+<Source>
+  <Component />
+</Source>
+
+<Props story="default" />

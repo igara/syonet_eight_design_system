@@ -56,4 +56,13 @@ export const styles = {
       stroke-dashoffset: calc(100 - ${props.percent});
     }
   `,
+  closeIcon: () => css`
+    width: 100%;
+    height: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  `,
 };

@@ -84,7 +84,7 @@ export const ProgressImage: React.FC<Props> = (props) => {
         </svg>
       )}
 
-      {percent === 100 && <img src={props.src} alt={props.alt} />}
+      {percent === 100 && <img src={props.src} alt={props.alt} loading="lazy" />}
 
       {percent === -1 && (
         <i css={Styles.styles.closeIcon()}>

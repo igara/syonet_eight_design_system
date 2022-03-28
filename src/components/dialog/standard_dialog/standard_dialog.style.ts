@@ -7,6 +7,7 @@ type StandardDialogStyleProps = {
 export const styles = {
   dialog: (props: StandardDialogStyleProps) => css`
     position: fixed;
+    z-index: 99999;
     top: 0;
     left: 0;
     display: ${props.isOpen ? 'flex' : 'none'};

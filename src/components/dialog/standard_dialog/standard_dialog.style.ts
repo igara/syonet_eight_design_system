@@ -1,23 +1,27 @@
 import { css } from '@emotion/react';
 
-type StandardDialogStyleProps = {
+type Dialog = {
   isOpen: boolean;
 };
 
 export const styles = {
-  dialog: (props: StandardDialogStyleProps) => css`
+  dialog: (props: Dialog) => css`
     position: fixed;
     z-index: 99999;
     top: 0;
     left: 0;
-    display: ${props.isOpen ? 'flex' : 'none'};
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: ${props.isOpen ? '100%' : '0'};
+    height: ${props.isOpen ? '100%' : '0'};
     padding: 0;
     border: 0;
     background: rgba(50, 50, 50, 0.5);
+    visibility: ${props.isOpen ? 'visible' : 'hidden'};
+    opacity: ${props.isOpen ? 1 : 0};
+    transition: opacity 0.5s, visibility 0.5s, width ${props.isOpen ? '0s' : '0.5s 0.5s'},
+      height ${props.isOpen ? '0s' : '0.5s 0.5s'};
   `,
   content: () => css`
     position: relative;

@@ -2,7 +2,7 @@ import { SerializedStyles, css } from '@emotion/react';
 import React from 'react';
 import * as Styles from './number_area.styles';
 import * as Hooks from './number_area.hooks';
-import { ArrowLeftIcon, ArrowRightIcon } from 'syonet_eight_design_system';
+import { ArrowLeftIcon, ArrowRightIcon } from '@design_system/src/components/icons';
 
 interface Props {
   inputCSS?: SerializedStyles;
